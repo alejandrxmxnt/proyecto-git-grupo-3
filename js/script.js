@@ -21,3 +21,13 @@ function aplicarFiltros() {
     vacio.hidden = visibles > 0;
 }
 
+//REALIZAR BUSQUEDAS POR SECCION
+buscador.addEventListener("input", aplicarFiltros);
+filtros.forEach(boton => {
+    boton.addEventListener("click", () => {
+        filtros.forEach(b => b.classList.remove("activo"));
+        boton.classList.add("activo");
+        categoriaActual = boton.dataset.categoria;
+        aplicarFiltros();
+    });
+});
