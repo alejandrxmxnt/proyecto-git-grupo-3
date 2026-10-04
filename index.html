@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda del Valle | Tienda de productos Bolivianos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;800&display=swap"
+        rel="stylesheet">
+    <!-- aca css -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- ENCABEZADO + MENU -->
+    <header class="encabezado">
+        <a href="#inicio" class="logo">Tienda del Valle</a>
+        <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        <nav class="menu" id="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+            <span class="carrito">🛒 Carrito: <strong id="contadorCarrito">0</strong></span>
+        </nav>
+    </header>
+</body>
+<main>
+    <!-- PAGINA PRINCIPAL POR SECCIONES -->
+    <section class="hero" id="inicio">
+        <div class="hero-texto">
+            <h1>Productos de altura, hechos en Bolivia</h1>
+            <p>Granos de los Yungas, artesanias, bombones, tostados en lotes pequeños y enviados a tu casa.</p>
+            <a href="#productos" class="boton">Ver productos</a>
+        </div>
+    </section>
+
+    <!-- SECCION 1: PRODUCTOS -->
+    <section class="seccion" id="productos">
+        <h2>Nuestros productos</h2>
+
+        <div class="herramientas">
+            <input type="search" id="buscador" placeholder="Buscar producto…" aria-label="Buscar producto">
+            <div class="filtros" id="filtros">
+                <button class="filtro activo" data-categoria="todos">Todos</button>
+                <button class="filtro" data-categoria="cafe">Café</button>
+                <button class="filtro" data-categoria="accesorios">Accesorios</button>
+                <button class="filtro" data-categoria="regalos">Regalos</button>
+                <button class="filtro" data-categoria="bombones">Bombones</button>
+            </div>
+        </div>
+
+        <div class="grilla" id="grilla">
+            <article class="producto" data-categoria="cafe" data-nombre="Café Yungas 250 g">
+                <div class="producto-img yungas">Yungas</div>
+                <h3>Café Yungas 250 g</h3>
+                <p>Notas a chocolate y caramelo. Tueste medio.</p>
+                <div class="producto-pie"><span class="precio">Bs 45</span><button
+                        class="boton boton-chico agregar">Agregar</button></div>
+            </article>
+            <article class="producto" data-categoria="cafe" data-nombre="Café Caranavi 500 g">
+                <div class="producto-img caranavi">Caranavi</div>
+                <h3>Café Caranavi 500 g</h3>
+                <p>Cuerpo suave y acidez cítrica. Tueste claro.</p>
+                <div class="producto-pie"><span class="precio">Bs 80</span><button
+                        class="boton boton-chico agregar">Agregar</button></div>
+            </article>
+            <article class="producto" data-categoria="accesorios" data-nombre="Prensa francesa">
+                <div class="producto-img prensa">Prensa</div>
+                <h3>Prensa francesa</h3>
+                <p>Vidrio resistente, capacidad de 600 ml.</p>
+                <div class="producto-pie"><span class="precio">Bs 120</span><button
+                        class="boton boton-chico agregar">Agregar</button></div>
+            </article>
+            <article class="producto" data-categoria="accesorios" data-nombre="Molinillo manual">
+                <div class="producto-img molino">Molinillo</div>
+                <h3>Molinillo manual</h3>
+                <p>Muelas de cerámica y molienda ajustable.</p>
+                <div class="producto-pie"><span class="precio">Bs 150</span><button
+                        class="boton boton-chico agregar">Agregar</button></div>
+            </article>
+            <article class="producto" data-categoria="regalos" data-nombre="Caja de regalo">
+                <div class="producto-img caja">Regalo</div>
+                <h3>Caja de regalo</h3>
+                <p>Dos cafés de 250 g y una taza de cerámica.</p>
+                <div class="producto-pie"><span class="precio">Bs 160</span><button
+                        class="boton boton-chico agregar">Agregar</button></div>
+            </article>
+            <article class="producto" data-categoria="regalos" data-nombre="Taza artesanal">
+                <div class="producto-img taza">Taza</div>
+                <h3>Taza artesanal</h3>
+                <p>Hecha a mano, pieza única.</p>
+                <div class="producto-pie"><span class="precio">Bs 35</span><button
+                        class="boton boton-chico agregar">Agregar</button></div>
+            </article>
+            <article class="producto" data-categoria="bombones" data-nombre="Bombones de chocolate">
+                <div class="producto-img bombon">Bombones</div>
+                <h3>Bombones de chocolate</h3>
+                <p>Deliciosos bombones de chocolate amargo y blanco.</p>
+                <div class="producto-pie"><span class="precio">Bs 80</span><button
+                        class="boton boton-chico agregar">Agregar</button></div>
+            </article>
+        </div>
+        <p class="vacio" id="vacio" hidden>No encontramos productos con esa búsqueda. Prueba con otra palabra.</p>
+    </section>
+
+    <!-- SECCION 2: NOSOTROS -->
+    <section class="seccion seccion-oscura" id="nosotros">
+        <h2>Quiénes somos</h2>
+        <p class="intro">Somos un emprendimiento familiar que apoya directamente a productores bolivianos.</p>
+        <div class="info-grid">
+            <div class="info">
+                <h3>Origen directo</h3>
+                <p>Trabajamos con cooperativas locales y pagamos un precio justo por cada producto.</p>
+            </div>
+            <div class="info">
+                <h3>Productos frescos</h3>
+                <p>Controlados cada semana, por pedido, para que llegue con todo su aroma.</p>
+            </div>
+            <div class="info">
+                <h3>Envío a todo el país</h3>
+                <p>Entregamos en 1 a 3 días hábiles según tu ciudad.</p>
+            </div>
+        </div>
+        <button class="boton boton-claro" id="masInfo" aria-expanded="false">Ver más sobre nuestros productos</button>
+        <div class="mas-info" id="masInfoTexto" hidden>
+            <p>Nuestros granos crecen entre 1.200 y 1.800 metros de altura. Bombones artesanales elaborados con ingredientes de primera calidad. Las mejores artesanias y muchos mas productos</p>
+        </div>
+    </section>
+
+    <!-- SECCION 3: CONTACTO (FORMULARIO) -->
+    <section class="seccion" id="contacto">
+        <h2>Contáctanos</h2>
+        <p class="intro">Escríbenos para pedidos o consultas.</p>
+        <form id="formulario" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo">
+                <small class="error" id="errorNombre"></small>
+            </div>
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com">
+                <small class="error" id="errorCorreo"></small>
+            </div>
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué te podemos ayudar?"></textarea>
+                <small class="error" id="errorMensaje"></small>
+            </div>
+            <button type="submit" class="boton">Enviar mensaje</button>
+            <p class="resultado" id="resultado" role="status"></p>
+        </form>
+    </section>
+</main>
+<footer class="pie">
+    <p>© 2026 Tienda del Valle. Diseñado por: Alexander-Adrian-Junior.</p>
+</footer>
+<!-- aca js -->
+</html>
