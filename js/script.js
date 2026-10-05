@@ -31,3 +31,15 @@ filtros.forEach(boton => {
         aplicarFiltros();
     });
 });
+
+//contador de productos en el carrito
+const contador = document.getElementById("contadorCarrito");
+let cantidad = 0;
+document.querySelectorAll(".agregar").forEach(boton => {
+    boton.addEventListener("click", () => {
+        cantidad++;
+        contador.textContent = cantidad;
+        const nombre = boton.closest(".producto").dataset.nombre;
+        mostrarAviso(nombre + " agregado al carrito");
+    });
+});
